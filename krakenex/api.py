@@ -103,6 +103,15 @@ class API(object):
             self.secret = f.readline().strip()
         return
 
+    def load_api_key(self, api_key, api_secret):
+        """ Load key and secret from function variables.
+
+        Usually passed as environment variables
+
+        """
+        self.key = api_key
+        self.secret = api_secret
+
     def _query(self, urlpath, data, headers=None, timeout=None):
         """ Low-level query handling.
 
